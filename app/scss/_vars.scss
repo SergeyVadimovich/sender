@@ -1,0 +1,60 @@
+// color
+$default:#6A6C6F;
+$title:#4f4f4f;
+$share:#e67e22;
+$border:#E4E5E7;
+
+
+// font
+%font-400{
+  font-family:'OpenSans-Regular', sans-serif;
+  font-weight:400;
+}
+
+%font-600{
+  font-family:'OpenSans-SemiBold', sans-serif;
+  font-weight:600;
+}
+
+%font-700{
+  font-family:'Opensans-Bold', sans-serif;
+  font-weight:700;
+}
+
+// pointer
+%pointer{
+  cursor: pointer;
+}
+
+// reset input checkbox
+%checkbox-hidden{
+  width: 1px;
+  height: 1px;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  position:absolute;
+}
+
+
+// svg sprite
+%svg-common {
+	background: url('../images/css/svg/sprite.css-3c008005.svg') no-repeat;
+}
+
+@keyframes imgFade{
+  0%{
+    opacity:1;
+  }
+  5%{
+    opacity:1;
+  }
+  10%{
+    opacity:0;
+  }
+  90%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}

@@ -1,0 +1,108 @@
+@media(max-width:1440px){
+  .sing,
+  .login{
+    padding: 20px 80px 40px;
+  }
+  .aside{
+    &__inner{
+      padding: 100px 120px 10px;
+    }
+  }
+
+}
+
+@media(max-width:1300px){
+  .sing,
+  .login{
+    width: 50%;
+    padding: 20px 40px 40px;
+    &__title{
+      font-size: 32px;
+      line-height: 44px;
+    }
+    &__inner{
+      padding-top: 100px;
+    }
+  }
+
+  .aside{
+    width: 50%;
+    background-position: 20% 0;
+    &__inner{
+      padding: 80px 50px 10px;
+    }
+    &__title{
+      font-size: 24px;
+      line-height: 36px;
+    }
+    .slider{
+      max-width:375px;
+      .slick-list{
+        max-width: 300px;
+        transform: translateX(30px);
+      }
+    }
+  }
+
+  .sing{
+    &__name-box{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__name{
+      margin-right: 10px;
+    }
+
+    &__name,
+    &__lastname{
+      width: 50%;
+    }
+  }
+
+  .social{
+    &__inner{
+      display: block;
+    }
+
+    &__link{
+      margin: 0 auto 10px;
+
+    }
+  }
+
+}
+
+@media(max-width:890px){
+  .aside{
+    .slider{
+      .slider{
+        max-width:300px;
+      }
+      .slick-list{
+        max-width: 250px;
+      }
+    }
+  }
+}
+
+@media(max-width:760px){
+  .aside{
+    display: none;
+    .slider{
+      display: none;
+    }
+  }
+  .sing,
+  .login{
+    width: 100%;
+    background-image: url('../images/aside-bg.svg');
+    background-position: 0 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+@media(max-width:420px){
+  
+}

@@ -1,0 +1,275 @@
+body{
+  color:$default;
+  font-size: 16px;
+  line-height:24px;
+  @extend %font-400;
+}  
+
+.wrapper{
+  max-width: 1920px;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+
+.title{
+  @extend %font-700;
+}
+
+.homelink{
+  position:absolute;
+  left: 0;
+  top: 0;
+  border-radius: 3px;
+  border:1px solid $border;
+  padding: 8px 12px 8px 34px;
+  @extend %font-600;
+  font-size: 13px;
+  line-height: 18px;
+  color:inherit;
+  transition:all .4s;
+  z-index:1;
+  &::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    width: 14px;
+    height: 14px;
+    transform: translateY(-50%);
+    left:10px;
+    @extend %svg-common;
+    background-position: 0 0;
+  }
+  &::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    left: 50%;
+    width: 0%;
+    height: 0%;
+    border-radius:10%;
+    background-color: $share;
+  }
+  &:hover{
+    color:#fff;
+    transition:all .4s;
+    border-color:transparent;
+    &::after{
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      border-radius:0%;
+      transition:all .4s;
+      z-index:-1;
+    }
+  }
+}
+
+.lang{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  &.drop{
+    .lang__list{
+      transition:opacity .4s;
+      opacity:1;
+      z-index:5;
+    }
+  }
+  &__list{
+    position: absolute;
+    top: 35px;
+    left: 0;
+    right: 0;
+    border-radius:4px;
+    border:1px solid $border;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+    padding:8px 10px;
+    background-color: #fff;
+    opacity:0;
+    z-index:-1;
+    transition:opacity .4s;
+  }
+
+  &__list-link{
+    @extend %font-600;
+    font-size: 13px;
+    line-height: 18px;
+    display: block;
+    color:inherit;
+    text-transform: uppercase;
+    padding: 5px 0;
+    width: 100%;
+    transition:color .4s;
+    &:hover{
+      color:$share;
+      transition:color .4s;
+    }
+  }
+  
+  &__btn{
+    @extend %font-600;
+    font-size: 13px;
+    line-height: 18px;
+    display: block;
+    width: 100%;
+    padding:8px 30px 8px 10px;
+    background-color: transparent;
+    border:1px solid $border;
+    border-radius:4px;
+    color:inherit;
+    @extend %pointer;
+    position:relative;
+    &::after{
+      content:"";
+      position:absolute;
+      right: 8px;
+      width: 14px;
+      height: 14px;
+      top:50%;
+      transform: translateY(-50%);
+      @extend %svg-common;
+	    background-position: 50% 0;
+    }
+  }
+}
+
+.subtitle-link{
+  color:$share;
+  @extend %font-700;
+}
+
+.form{
+  width: 100%;
+  label {
+    display: block;
+  }
+  input{
+    border: 1px solid $border;
+    border-radius: 4px;
+    padding: 8px 10px;
+    outline-color: $share;
+    &::placeholder{
+      color: #9D9D9D;
+      font-size: 13px;
+      line-height: 18px;
+    }
+  }
+}
+
+.form-btn{
+  @extend %font-600;
+  font-size: 13px;
+  line-height: 18px;
+  color:#fff;
+  display: block;
+  padding: 8px 12px;
+  background-color: $share;
+  border-radius: 3px;
+  border:none;
+  transition:transform .4s;
+  &:hover{
+    @extend %pointer;
+    transform:scale(0.95);
+    transition:transform .4s;
+  }
+}
+
+.password{
+  position: relative;
+  .show{
+    opacity:1;
+    z-index:1;
+  }
+
+  .hide{
+    opacity:0;
+    z-index:-1;
+  }
+
+  &__switch{
+    @extend %font-700;
+    font-size: 11px;
+    line-height: 18px;
+    text-transform: uppercase;
+    position: absolute;
+    right: 10px;
+    top:42px;
+    @extend %pointer;
+  }
+  &__switch--show{
+    opacity:1;
+    z-index:1;
+  }
+  &__switch--hide{
+    opacity:0;
+    z-index:-1;
+  }
+
+}
+
+// custom checkbox
+  .sing__checked-input,
+  .login__checked-input{
+    @extend %checkbox-hidden;
+  }
+
+  .sing__checked-label,
+  .login__checked-label{
+    position:relative;
+    display: block;
+    padding-left:40px;
+    @extend %pointer; 
+  }
+
+  .checkbox{
+    position:absolute;
+    display: block;
+    left: 0;
+    top:50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 1px solid $border;
+    border-radius: 2px;
+    background-color: transparent;
+    transition:all .4s;
+    &::after{
+      content:"";
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 10px;
+      @extend %svg-common;
+      background-position: 0 100%;
+      opacity:0;
+      z-index: -1;
+      transition: opacity .4s;
+    }
+  }
+
+  .sing__checked-label input[type=checkbox]:checked ~ .checkbox,
+  .login__checked-label input[type=checkbox]:checked + .checkbox{
+    border-color:$share;
+    transition:all .4s;
+    &::after{
+      transition: opacity .4s;
+      opacity:1;
+      z-index:1;
+    }
+  }
+
+  .error__message{
+    color:red;
+    @extend %font-600;
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+

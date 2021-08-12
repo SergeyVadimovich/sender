@@ -1,0 +1,74 @@
+%svg-common {
+	background: url("svg/sprite.css-3c008005.svg") no-repeat;
+}
+
+.svg-arrow-left {
+	@extend %svg-common;
+	background-position: 0 0;
+}
+
+.svg-arrow-left-dims {
+	width: 14px;
+	height: 14px;
+}
+
+.svg-checked-icon {
+	@extend %svg-common;
+	background-position: 0 100%;
+}
+
+.svg-checked-icon-dims {
+	width: 12px;
+	height: 10px;
+}
+
+.svg-drop-menu-icon {
+	@extend %svg-common;
+	background-position: 50% 0;
+}
+
+.svg-drop-menu-icon-dims {
+	width: 14px;
+	height: 14px;
+}
+
+.svg-facebook-icon {
+	@extend %svg-common;
+	background-position: 0 58.333333333333336%;
+}
+
+.svg-facebook-icon-dims {
+	width: 14px;
+	height: 14px;
+}
+
+.svg-google-icon {
+	@extend %svg-common;
+	background-position: 50% 58.333333333333336%;
+}
+
+.svg-google-icon-dims {
+	width: 14px;
+	height: 14px;
+}
+
+.svg-slick-arrow-next {
+	@extend %svg-common;
+	background-position: 100% 0;
+}
+
+.svg-slick-arrow-next-dims {
+	width: 14px;
+	height: 14px;
+}
+
+.svg-slick-arrow-prev {
+	@extend %svg-common;
+	background-position: 100% 58.333333333333336%;
+}
+
+.svg-slick-arrow-prev-dims {
+	width: 14px;
+	height: 14px;
+}
+

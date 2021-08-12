@@ -1,0 +1,371 @@
+@import 'vars';
+@import 'fonts';
+@import 'libs';
+@import 'reset';
+@import 'global';
+
+// page singUp
+// section aside
+.aside{
+  width: 60%;
+  background-image: url('../images/aside-bg.svg');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+  padding-bottom: 100px;
+  position: relative;
+  &__inner{
+    padding: 100px 180px 10px;
+  }
+
+  &__logo-link{
+    display: block;
+    margin-bottom: 40px;
+  }
+
+  &__title{
+    font-size: 32px;
+    line-height: 44px;
+    color:$title;
+    margin-bottom: 5px;
+  }
+
+  &__subtitle{
+    margin-bottom: 40px;
+  }
+
+  &__img-box{
+    max-width: 760px;
+    width: 100%;
+    max-height: 450px;
+    height: 100%;
+    position:relative;
+  }
+  //animation login img 
+  .aside-login{
+    &__img{
+      position:absolute;
+      left: 0;
+      animation-name: imgFade;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-duration: 25s;
+
+      &:nth-child(1){
+        animation-delay: 25s;
+      }
+      &:nth-child(2){
+        animation-delay: 20s;
+      }
+      &:nth-child(3){
+        animation-delay: 15s;
+      }
+      &:nth-child(4){
+        animation-delay: 10s;
+      }
+      &:nth-child(5){
+        animation-delay: 5s;
+      }
+    }
+  }
+// slider 
+  .slider{
+    position: absolute;
+    bottom:20px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 750px;
+    width: 100%;
+
+    &__text{
+      @extend %font-700;
+      font-size: 13px;
+      line-height: 18px;
+      text-transform: uppercase;
+      color:#fff;
+      margin-bottom: 10px;
+    }
+
+    &__items{
+      padding: 0 14px;
+    }
+
+    &__item{
+      padding: 0 10px;
+      vertical-align: middle;
+    }
+
+    .slick-list{
+      max-width: 500px;
+      transform: translateX(110px);
+    }
+
+    .slick-prev.slick-arrow,
+    .slick-next.slick-arrow{
+      border:none;
+      background-color: transparent;
+      font-size: 0;
+      line-height: 0;
+      width: 14px;
+      height: 14px;
+      @extend %pointer;
+      position: absolute;
+    }
+
+    .slick-prev.slick-arrow{
+      @extend %svg-common;
+	    background-position: 100% 58.3%;
+      left: 0;
+      top:50%;
+      transform: translateY(-50%);
+    }
+
+    .slick-next.slick-arrow{
+      @extend %svg-common;
+	    background-position: 100% 0;
+      right: 0px;
+      top:50%;
+      transform: translateY(-50%);
+    }
+  }
+// end slider
+}
+// end section aside
+
+// section sing
+.sing{
+  padding: 20px 120px 40px;
+  position:relative;
+  width: 40%;
+
+  &__inner{
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 180px;;
+  }
+
+  &__content{
+    margin-bottom: 15px;
+    text-align: center;
+    color:$title;
+  }
+  
+  &__title{
+    font-size: 50px;
+    line-height: 68px;
+  }
+
+  &__form {
+    margin-bottom: 30px;
+  }
+
+  &__form-text{
+    @extend %font-700;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  &__form-input{
+    width: 100%;
+    margin-bottom: 10px; 
+  }
+
+  &__checked{
+    margin:8px 0 15px;
+  }
+
+  &__checked-label{
+    display: block;
+    font-size: 13px;
+    line-height: 18px;
+
+    &:first-child{
+      margin-bottom: 10px;
+    }
+  }
+
+  &__cheked-link{
+    @extend %font-700;
+    color:$share;
+  }
+
+  &__form-btn{
+    margin: 0 auto;
+    max-width:150px;
+    width: 100%;
+  }
+
+  &__social{
+    width: 100%;
+  }
+
+  &__social-span{
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+    color:$border;
+    position:relative;
+    cursor:default;
+    &::before,
+    &::after{
+      content:"";
+      position:absolute;
+      height: 1px;
+      background-color: $border;
+      top:50%;
+      transform: translateY(-50%);
+    }
+    &::before{
+      left: 0;
+      width: calc(50% - 15px);
+    }
+    &::after{
+      right: 0;
+      width: calc(50% - 15px);
+    }
+  }
+
+}
+.social{
+  &__inner{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+  }
+
+  &__link{
+    display: block;
+    border-radius: 3px;
+    border:1px solid $border;
+    padding: 8px 12px 8px 30px;
+    @extend %font-600;
+    font-size: 13px;
+    line-height: 18px;
+    color:inherit;
+    transition:all .4s;
+    position: relative;
+    &:hover{
+      transform: scale(0.95);
+    }
+  }
+  &__link--google{
+    max-width: 170px;
+    width: 100%;
+    margin-right: 5px;
+    &::before{
+      content:"";
+      position:absolute;
+      top:50%;
+      width: 14px;
+      height: 14px;
+      transform: translateY(-50%);
+      left:10px;
+      @extend %svg-common;
+      background-position: 50% 58.3%;
+    }
+  }
+  &__link--facebook{
+    max-width: 190px;
+    width: 100%;
+    &::before{
+      content:"";
+      position:absolute;
+      top:50%;
+      width: 14px;
+      height: 14px;
+      transform: translateY(-50%);
+      left:10px;
+      @extend %svg-common;
+      background-position: 0 58.3%;
+    }
+  }
+}
+.copy{
+  position: absolute;
+  bottom: 20px;
+  left:50%;
+  transform: translateX(-50%);
+}
+
+// end section sing
+
+// end page singUp
+
+// page logIn
+.login{
+  padding: 20px 120px 40px;
+  position:relative;
+  width: 40%;
+  &__inner{
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 180px;
+  }
+
+
+  &__content{
+    margin-bottom: 15px;
+    text-align: center;
+    color:$title;
+  }
+
+  &__title{
+    font-size: 50px;
+    line-height: 68px;
+  }
+
+  &__form{
+    margin-bottom: 30px;
+  }
+
+  &__form-text{
+    @extend %font-700;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  &__pass-textbox{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__pass-link{
+    color:$share;
+    @extend %font-600;
+    display: block;
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  &__pass-input,
+  &__mail-input{
+    width: 100%;
+    margin-bottom: 10px; 
+  }
+
+  &__checked{
+    margin:8px 0 15px;
+  }
+
+  &__checked-label{
+    display: block;
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  &__form-btn{
+    margin: 0 auto;
+    max-width:150px;
+    width: 100%;
+  }
+}
+
+// end page logIn
+
+@import 'media';
